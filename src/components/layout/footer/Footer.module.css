@@ -1,0 +1,15 @@
+.footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.name {
+  font-weight: bold;
+  color: var(--primary-color);
+}
