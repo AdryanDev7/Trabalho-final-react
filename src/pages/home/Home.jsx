@@ -1,11 +1,9 @@
-import React from "react";
-
-const Home = () => {
+import React from 'react';
+export const Home = () => {
   return (
     <div>
-      <h1>Bem-vindo ao Grupo 4 E-Commerce</h1>
+      <h1>Página Inicial (Home)</h1>
+      <p>Este é o conteúdo da página principal.</p>
     </div>
   );
 };
-
-export default Home;
