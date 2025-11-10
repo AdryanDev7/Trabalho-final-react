@@ -1,8 +1,10 @@
 import React from 'react';
-import { Outlet } from "react-router-dom"; 
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { Footer } from "./footer/Footer.jsx";
 import { NavBar } from "./navbar/NavBar.jsx";
 import styles from "./Layout.module.css";
+import Login from '../../pages/login/Login.jsx';
+import {Home} from '../../pages/home/Home.jsx';
 
 export const Layout = () => {
     return (
@@ -11,6 +13,12 @@ export const Layout = () => {
             <main className={styles.mainContent}>
                 <Outlet />
             </main>
+            {/* <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                </Routes>
+            </BrowserRouter> */}
             <Footer />
         </div>
     )

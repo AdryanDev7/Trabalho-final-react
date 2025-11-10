@@ -1,8 +1,15 @@
 import React from 'react';
 import styles from './Login.module.css';
+import { login } from '../../service/apiService';
+import  {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
- 
+//  {
+//   "username": "admin@teste.com",
+//   "password": "123456"
+// }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Formulário submetido (apenas visual)");

@@ -4,7 +4,7 @@ import { Login } from '../pages/login/Login.jsx';
 
 export const RotasPublicas = () => {
     return (
-        <Routes>
+        <Routes path="/" element={<Layout />}> 
             <Route path="/login" element={<Login />} />
         </Routes>
     );
