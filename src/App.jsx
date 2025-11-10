@@ -1,11 +1,13 @@
-import React from 'react';
 import './App.css';
-import { Layout } from './components/layout/Layout.jsx';
+import AppRouter from './routes/Router.jsx';
 
 function App() {
   
   return (
-    <Layout />
+    
+      <AppRouter />
+    
+    
   );
 }
 
