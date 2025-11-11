@@ -31,7 +31,11 @@ export async function getProduto() {
 
 // Função para POST
  export const criarProduto= async ( produtos ) => {
-    const {data} = await apiPost.post('/PostMapping', produtos)
+    const {data} = await apiPost.post('api/produtos/', produtos, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+      }
+    })
     return data
  }
  // Função para UPDATE

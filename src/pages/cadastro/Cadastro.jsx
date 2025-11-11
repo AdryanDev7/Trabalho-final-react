@@ -1,10 +1,9 @@
 import React from 'react';
-
+import { FormCadastro } from '../../components/formCadastro/FormCadastro';
 export const Cadastro = () => {
   return (
     <div>
-      <h1>Página de Cadastro de produtos</h1>
-      <p>tem que fazer o form ainda</p>
+      <FormCadastro/>
     </div>
   );
 };
