@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./FormCadastro.module.css";
-
+import { criarProduto } from "../../service/apiService";
 
 
 export const FormCadastro = () => {
@@ -24,6 +24,7 @@ export const FormCadastro = () => {
         }
 
 
+        criar();
         alert(`Produto cadastrado!\nNome: ${nome}\nPreço: ${preco}`);
 
 
@@ -33,14 +34,19 @@ export const FormCadastro = () => {
         setLoading(false);
         setEstoque("");
     };
+
+
     async function criar() {
+        console.log("Criando produto...");
         try {
 
             const response = await criarProduto({
                 nome: nome,
                 preco: preco,
                 descricao: descricao,
+                estoque: estoque
             });
+
 
             console.log(response);
 

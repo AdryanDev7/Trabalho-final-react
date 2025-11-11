@@ -1,5 +1,5 @@
 import {api} from "./api";
-// import { apiPost } from "./api";
+
 
 export const login = async (credenciais) => {
   try {
@@ -31,25 +31,34 @@ export async function getProduto() {
 
 // Função para POST
  export const criarProduto= async ( produtos ) => {
-    const {data} = await apiPost.post('api/produtos/', produtos, {
+    const {data} = await api.post('api/produtos', produtos, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+      }
+     })
+     console.log("Requisição feita");
+    return data
+ }
+ // Função para UPDATE
+ export const atualizarProduto = async (id, produtos) => {
+    const {data} = await api.put(`/posts/${id}`, produtos, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('authToken')}`
       }
     })
     return data
  }
- // Função para UPDATE
- export const atualizarProduto = async (id, produtos) => {
-    const {data} = await apiPost.put(`/posts/${id}`, produtos)
-    return data
- }
  // Função para DELETE
  export const deletarProduto = async ( id ) => {
-    const {data} = await apiPost.delete(`/posts/${id}`)
+    const {data} = await api.delete(`/posts/${id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+      }
+    })
     return data
  }
 
  export const loginApi = async(usuario) =>{
-   const {data} = await apiPost.post('/login',usuario)
+   const {data} = await api.post('/login',usuario)
    return data
  }
