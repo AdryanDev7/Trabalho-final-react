@@ -14,7 +14,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Formulário submetido (apenas visual)");
+    console.log("Formulário submetido");
     console.log("Username:", username);
     console.log("Password:", password);
     login({username:username, password:password})
