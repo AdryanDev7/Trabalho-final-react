@@ -8,7 +8,7 @@ export const RotasPrivadas = () => {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-
+                
                 <Route index element={<Home />} />
                 <Route path="cadastro" element={<Cadastro />} />
                 <Route path="admin" element={<Admin />} />
