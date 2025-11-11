@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { Card } from '../../components/Card/Card';
 import { api } from '../../service/api';
 import { useState, useEffect } from 'react';
+import { getProduto } from '../../service/apiService';
 
 export const Home = () => {
 
@@ -11,8 +12,9 @@ export const Home = () => {
 
   async function BuscarProdutos() {
     try {
-      const response = await api.get('/api/produtos');
-      setProdutos(response.data);
+      const response = await getProduto();
+      console.log(response);
+      setProdutos(response);
       setError(null);
     } catch (error) {
       setError(error.message);
@@ -24,7 +26,7 @@ export const Home = () => {
   useEffect(() => {
     BuscarProdutos();
   }, []);
-
+console.log(produtos);
 
   return (
     <div>

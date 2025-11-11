@@ -21,7 +21,11 @@ export const login = async (credenciais) => {
 
 
 export async function getProduto() {
-    const {data} = await api.get("/api/produtos");
+    const {data} = await api.get("/api/produtos",{
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+      }
+    });
     return data
 }
 
